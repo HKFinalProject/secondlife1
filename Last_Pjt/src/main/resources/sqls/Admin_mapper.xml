@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="admin">
+
+	<resultMap type="com.bom.admin.AdminDto" id="AdminDto">
+		<result column="MEMBER_ID" property="member_id" />
+		<result column="MEMBER_PW" property="member_pw" />
+		<result column="MEMBER_NAME" property="member_name" />
+		<result column="MEMBER_EMAIL" property="member_email" />
+		<result column="MEMBER_PHONE" property="member_phone" />
+		<result column="MEMBER_ENABLED" property="member_enabled" />
+		<result column="MEMBER_ROLE" property="member_role" />
+	</resultMap>
+
+	<select id="selectAll" resultType="AdminDto">
+		SELECT *
+		FROM MEMBER
+	</select>
+
+	<select id="selectOne" parameterType="map" resultMap="AdminDto">
+		SELECT *
+		FROM MEMBER
+		WHERE MEMBER_ID = #{member_id}
+	</select>
+
+	<insert id="insert" parameterType="AdminDto">
+		INSERT INTO MEMBER (
+		MEMBER_ID, MEMBER_PW, MEMBER_NAME, MEMBER_EMAIL, MEMBER_PHONE,
+		MEMBER_ENABLED, MEMBER_ROLE
+		) VALUES(
+		#{member_id},#{member_pw},#{member_name},#{member_email},#{member_phone},#{member_enabled},#{member_role}
+		)
+	</insert>
+
+	<update id="update" parameterType="AdminDto">
+		UPDATE MEMBER SET MEMBER_PW=
+		#{member_pw}, MEMBER_NAME= #{member_name},MEMBER_EMAIL=
+		#{member_email}, MEMBER_PHONE= #{member_phone},MEMBER_ENABLED=
+		#{member_enabled}, MEMBER_ROLE= #{member_role} WHERE MEMBER_ID=
+		#{member_id}
+	</update>
+
+	<delete id="delete" parameterType="String">
+		DELETE FROM MEMBER WHERE
+		MEMBER_ID= #{member_id}
+	</delete>
+
+
+</mapper>
