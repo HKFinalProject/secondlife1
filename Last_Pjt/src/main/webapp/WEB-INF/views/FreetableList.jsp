@@ -21,14 +21,14 @@
 <div class="content">
 	<h1 style="margin-left:3%;">자유게시판</h1>
 	
-	<c:if test="${empty login.id }">
-	  <div id="loginAlert">
-	  	게시판을 보기 위해서는 <a id="doLogin" href="loginPage.jsp">로그인</a>이 필요합니다
-		<br><br><br><br>
-	  </div>
-	</c:if>
+<%-- 	<c:if test="${empty login.id }"> --%>
+<!-- 	  <div id="loginAlert"> -->
+<!-- 	  	게시판을 보기 위해서는 <a id="doLogin" href="loginPage.jsp">로그인</a>이 필요합니다 -->
+<!-- 		<br><br><br><br> -->
+<!-- 	  </div> -->
+<%-- 	</c:if> --%>
 	
-	<c:if test="${login.id != null}">
+<%-- 	<c:if test="${login.id != null}"> --%>
 
 <div align="center" id="selectAllLista">
 	<table>
@@ -57,7 +57,7 @@
 			<c:otherwise>
 				<c:forEach items="${allList}" var="dto">
 					<c:choose>
-						<c:when test="${dto.delFlag eq 'Y'}">
+						<c:when test="${dto.freetable_delFlag eq 'Y'}">
 							<tr>
 								<td colspan="9" align="center">─────── 삭제된 글입니다. ───────</td>
 							</tr>
@@ -65,16 +65,16 @@
 
 						<c:otherwise>
 							<tr>
-								<td align="center">${dto.boardNo }</td>
-								<td align="center">${dto.id }</td>
+								<td align="center">${dto.freetable_no }</td>
+								<td align="center">${dto.freetable_id }</td>
 								<td>
-									<!-- 타이틀탭 수에 따라 앞부분 공백주기 --> <c:forEach begin="1" end="${dto.titleTab }">
+									<!-- 타이틀탭 수에 따라 앞부분 공백주기 --> <c:forEach begin="1" end="${dto.freetable_titleTab }">
 								&nbsp;&nbsp;
 								</c:forEach> 
-									<a href="freetable.do?command=freetableDetail&boardNo=${dto.boardNo}">${dto.title}</a>
+									<a href="freetable.do?command=freetableDetail&boardNo=${dto.freetable_no}">${dto.freetable_title}</a>
 								</td>
-								<td align="center">${dto.regDate }</td>
-								<td align="center">${dto.readCount }</td>
+								<td align="center">${dto.freetable_regDate }</td>
+								<td align="center">${dto.freetable_readCount }</td>
 							</tr>
 						</c:otherwise>
 					</c:choose>
@@ -98,12 +98,12 @@
 				</c:choose></td>
 			<td colspan="1" align="center">
 			<input type="button" class="bttn-simple bttn-xs bttn-danger" value="글쓰기"
-				onclick="location.href='freetable.do?command=freetableWriteForm'">
+				onclick="location.href='writeform.do'">
 			</td>
 		</tr>
 	</table>
 	</div>
-	</c:if>
+<%-- 	</c:if> --%>
 	
 </div>
 </div>
