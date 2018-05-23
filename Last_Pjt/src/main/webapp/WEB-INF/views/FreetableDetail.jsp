@@ -105,8 +105,8 @@
 								<td align="center"><c:forEach begin="1"
 										end="${list.freecomm_titleTab }">
 								 RE:
-						</c:forEach> <a 
-									href="commRe.do?freetable_no=${list.freetable_no}
+						</c:forEach> 
+						     <a href="commRe.do?freetable_no=${list.freetable_no}
 									&freecomm_id=${list.freecomm_id}&freecomm_no=${list.freecomm_no}
 									&freecomm_groupNo=${list.freecomm_groupNo}&freecomm_step=${list.freecomm_step}">${list.freecomm_content}</a></td>
 								<td align="center">${list.freecomm_regDate }</td>
@@ -219,9 +219,9 @@
 					</tr>
 
 					<tr>
-						<td colspan="2" align="right"><input type="submit"
-							class="bttn-jelly bttn-xs bttn-danger" value="답글"> <input
-							type="button" class="bttn-jelly bttn-xs bttn-danger" value="취소"
+						<td colspan="2" align="right">
+						<input type="submit" class="bttn-jelly bttn-xs bttn-danger" value="답글"> 
+						<input type="button" class="bttn-jelly bttn-xs bttn-danger" value="취소"
 							onclick="freetableDetail()" /></td>
 					</tr>
 

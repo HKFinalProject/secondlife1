@@ -1,11 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%
-	request.setCharacterEncoding("UTF-8");
-%>
-<%
-	response.setContentType("text/html; charset=UTF-8");
-%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%	request.setCharacterEncoding("UTF-8");%>
+<%	response.setContentType("text/html; charset=UTF-8");%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,8 +12,8 @@
 
 	<h1>글쓰기</h1>
 <div class="content">
-	<form action="freetable.do">
-		<input type="hidden" name="command" value="freetableWrite">
+	<form action="writeForm.do">
+		
 
 
 		<table id="table" border="1" >
@@ -44,7 +39,7 @@
 				<td colspan="2" align="right">
 					<input type="submit" class="bttn-jelly bttn-xs bttn-danger" value="작성완료">
 					<input type="button" value="취소" class="bttn-jelly bttn-xs bttn-danger"
-					onclick="location.href='freetable.do?command=freetableList'"></td>
+					onclick="location.href='list.do'"></td>
 			</tr>
 		</table>
 	</form>
