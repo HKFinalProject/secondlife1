@@ -20,29 +20,23 @@ a { text-decoration:none }
 
 	<div class="container">
    <form action="insert.do" method="post">
-				<label>ID</label>
-				<p><input type="text" name="member_id" placeholder="ID를 입력하세요."></p>
-				
-				<label>PASSWORD</label>
-				<p><input type="text" name="member_pw" placeholder="비밀번호를 입력하세요."></p>
-				
-				<label>이름</label>
-				<p><input type="text" name="member_name" placeholder="이름을 입력하세요."></p>
-				
-				<label>email</label>
-				<p><input type="text" name="member_email" placeholder="email 입력하세요."></p>
-				
-				<label>전화번호</label>
-				<p><input type="text" name="member_phone" placeholder="전화번호를 입력하세요."></p>
-				
-				<label>가입여부</label>
-				<p><input type="text" name="member_enabled" placeholder="가입여부를 입력하세요.(-)"></p>
-				
-				<label>등급</label>
-				<p><input type="text" name="member_role" placeholder="등급을 입력하세요."></p>
-				 <button type="submit" class="btn btn-primary">작성</button>
-	</form> 
-	</div>
+    	<div class="form-group">
+		<label for="noticeboard_title">제목</label>
+        <input type="text" class="form-control" id="noticeboard_title" name="noticeboard_title" placeholder="제목을 입력하세요.">
+      </div>
+      <div class="form-group">
+        <label for="noticeboard_writer">작성자</label>
+        <%-- <input type="hidden" name="member_name" value="${admin_dto.member_name }"> --%>
+        <input type="text" class="form-control" id="noticeboard_writer" name="noticeboard_writer" placeholder="이름을 입력하세요.">
+      </div>
+      <div class="form-group">
+        <label for="noticeboard_content">내용</label>
+        <textarea class="form-control" id="noticeboard_content" name="noticeboard_content" rows="3" placeholder="내용을 입력하세요."></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">작성</button>
+    </form>
+</div>
+
 <%@ include file="bootstrap.jsp" %>
 </body>
 </html>

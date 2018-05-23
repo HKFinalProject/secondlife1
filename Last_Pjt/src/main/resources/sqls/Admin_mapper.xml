@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="admin">
 
-	<resultMap type="com.bom.admin.AdminDto" id="AdminDto">
+	<resultMap type="com.bom.dto.AdminDto" id="AdminDto">
 		<result column="MEMBER_ID" property="member_id" />
 		<result column="MEMBER_PW" property="member_pw" />
 		<result column="MEMBER_NAME" property="member_name" />

@@ -3,7 +3,7 @@
 <configuration>
 	
 	<typeAliases>
-		<typeAlias type="com.bom.admin.AdminDto" alias="AdminDto"/>
+		<typeAlias type="com.bom.dto.AdminDto" alias="AdminDto"/>
 	</typeAliases>
 	
 	<mappers>

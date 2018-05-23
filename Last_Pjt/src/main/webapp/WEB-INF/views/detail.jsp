@@ -31,39 +31,39 @@ a { text-decoration:none }
 </head>
 <body>
 
-	<jsp:useBean id="dto" class="com.bom.admin.AdminDto" scope="request"></jsp:useBean>
+	<jsp:useBean id="admin_dto" class="com.bom.dto.AdminDto" scope="request"></jsp:useBean>
 	<div class="container">
 	<form action="delete.do" method="post" id="del"> 
-	<input type="hidden" name="member_id" value="${dto.member_id }">
+	<input type="hidden" name="member_id" value="${admin_dto.member_id }">
 		<h3>회원 정보</h3>
 		<br/>
 			<div class="form-group">
 				<label>ID</label>
-				<p><jsp:getProperty property="member_id" name="dto" /></p>
+				<p><jsp:getProperty property="member_id" name="admin_dto" /></p>
 			</div>
 			<div class="form-group">
 				<label>PASSWORD</label>
-				<p><jsp:getProperty property="member_pw" name="dto" /></p>
+				<p><jsp:getProperty property="member_pw" name="admin_dto" /></p>
 			</div>
 			<div class="form-group">
 				<label>이름</label>
-				<p><jsp:getProperty property="member_name" name="dto" /></p>
+				<p><jsp:getProperty property="member_name" name="admin_dto" /></p>
 			</div>
 			<div class="form-group">
 				<label>email</label>
-				<p><jsp:getProperty property="member_email" name="dto" /></p>
+				<p><jsp:getProperty property="member_email" name="admin_dto" /></p>
 			</div>
 			<div class="form-group">
 				<label>phone</label>
-				<p><jsp:getProperty property="member_phone" name="dto" /></p>
+				<p><jsp:getProperty property="member_phone" name="admin_dto" /></p>
 			</div>
 			<div class="form-group">
 				<label>가입여부</label>
-				<p><jsp:getProperty property="member_enabled" name="dto" /></p>
+				<p><jsp:getProperty property="member_enabled" name="admin_dto" /></p>
 			</div>
 			<div class="form-group">
 				<label>등급</label>
-				<p><jsp:getProperty property="member_role" name="dto" /></p>
+				<p><jsp:getProperty property="member_role" name="admin_dto" /></p>
 			</div>
 			<br/>
 				<button type="submit" class="btn btn-primary">삭제</button>
@@ -75,14 +75,14 @@ a { text-decoration:none }
 	<div class="container">
 	<form action="update.do" method="post" id="up">
 		<h3>회원 정보 수정</h3>
-		 <input type="hidden" name="member_id" value="${dto.member_id }">
+		 <input type="hidden" name="member_id" value="${admin_dto.member_id }">
 			<div class="form-group">
 				<label>ID</label>
-				<p>${dto.member_id }</p>
+				<p>${admin_dto.member_id }</p>
 			</div>
 			<div class="form-group">
 				<label>PASSWORD</label>
-				<p><input type="text" name="member_pw" value="${dto.member_pw }"></p>
+				<p><input type="text" name="member_pw" value="${admin_dto.member_pw }"></p>
 			</div>
 			<div class="form-group">
 				<label>이름</label>

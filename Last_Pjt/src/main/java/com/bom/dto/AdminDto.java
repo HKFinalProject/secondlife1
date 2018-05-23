@@ -1,4 +1,4 @@
-package com.bom.admin;
+package com.bom.dto;
 
 public class AdminDto {
 

@@ -1,12 +1,12 @@
-package com.bom.admin.biz;
+package com.bom.biz;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bom.admin.AdminDto;
-import com.bom.admin.dao.AdminDao;
+import com.bom.dao.AdminDao;
+import com.bom.dto.AdminDto;
 
 @Service
 public class AdminBizImpl implements AdminBiz {

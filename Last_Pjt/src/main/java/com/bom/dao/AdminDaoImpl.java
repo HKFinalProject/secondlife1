@@ -1,4 +1,4 @@
-package com.bom.admin.dao;
+package com.bom.dao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.bom.admin.AdminDto;
+import com.bom.dto.AdminDto;
 
 @Repository
 public class AdminDaoImpl implements AdminDao {

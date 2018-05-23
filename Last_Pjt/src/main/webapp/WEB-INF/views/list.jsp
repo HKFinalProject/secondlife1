@@ -12,8 +12,16 @@
 </head>
 <body>
 	<h3>회원 목록</h3>
+	<div class="container">
+	 <div class="col-md-9">
+	    <input type="text" class="form-control" placeholder="제목이나 ID로 검색하세요.">
+	     <div class="input-group-append">
+        <button class="btn btn-primary" type="button">검색</button>
+      </div>
+      </div>
+      
 	<c:choose>
-		<c:when test="${empty list }">
+		<c:when test="${empty admin_list }">
 			<h3>******회원정보가 없습니다.*******</h3>
 		</c:when>
 		<c:otherwise>
@@ -28,17 +36,17 @@
 						<th>등급</th>
 						<th>삭제여부</th>
 					</tr>
-					<c:forEach items="${list }" var="dto">
+					<c:forEach items="${admin_list }" var="admin_dto">
 						<tr>
-							<td>${dto.member_id }</td>
-							<td>${dto.member_pw }</td>
-							<td>${dto.member_name }</td>
-							<td>${dto.member_email }</td>
-							<td>${dto.member_phone }</td>
-							<td>${dto.member_enabled }</td>
-							<td>${dto.member_role }</td>
-							<td><a href="delete.do?member_id=${dto.member_id }">[삭제]</a></td>
-							<td><a href="detail.do?member_id=${dto.member_id }">[수정]</a></td>
+							<td>${admin_dto.member_id }</td>
+							<td>${admin_dto.member_pw }</td>
+							<td>${admin_dto.member_name }</td>
+							<td>${admin_dto.member_email }</td>
+							<td>${admin_dto.member_phone }</td>
+							<td>${admin_dto.member_enabled }</td>
+							<td>${admin_dto.member_role }</td>
+							<td><a href="delete.do?member_id=${admin_dto.member_id }">[삭제]</a></td>
+							<td><a href="detail.do?member_id=${admin_dto.member_id }">[수정]</a></td>
 						</tr>
 					</c:forEach>	
 		</c:otherwise>
@@ -46,10 +54,11 @@
 					<tr>
 						<td colspan="3">
 							<button class="btn btn-primary" onclick="location.href='index.jsp'">메인</button>
-							<button class="btn btn-primary" onclick="location.href='write.do'">회원 추가(test)</button>
+							<button class="btn btn-primary" onclick="location.href='write.do'">공지사항 작성</button>
 						</td>			
 					</tr>
 			</table>
+			</div>
 <%@ include file="bootstrap.jsp" %>
 </body>
 </html>

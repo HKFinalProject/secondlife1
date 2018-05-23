@@ -1,10 +1,10 @@
-package com.bom.admin.dao;
+package com.bom.dao;
 
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.bom.admin.AdminDto;
+import com.bom.dto.AdminDto;
 
 public interface AdminDao {
 	

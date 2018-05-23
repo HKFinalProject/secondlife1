@@ -1,4 +1,4 @@
-package com.bom.admin.controller;
+package com.bom.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.bom.admin.AdminDto;
-import com.bom.admin.biz.AdminBiz;
+import com.bom.biz.AdminBiz;
+import com.bom.dto.AdminDto;
 
 @Controller
 public class AdminController {
@@ -46,8 +46,9 @@ public class AdminController {
 	@RequestMapping(value = "list.do")
 	public String list(Model model) {
 		
+		System.out.println("123");
 		List<AdminDto> list = biz.selectAll();
-		model.addAttribute("list", list);
+		model.addAttribute("admin_list", list);
 
 		return "list";
 	}
@@ -57,7 +58,7 @@ public class AdminController {
 		//@RequestParam("seq") jsp파일에서 넘어오는 seq를 int seq에 넣어주겠다
 		
 		AdminDto dto = biz.selectOne(member_id);
-		model.addAttribute("dto", dto);
+		model.addAttribute("admin_dto", dto);
 		return "detail";
 	}
 	
@@ -70,7 +71,7 @@ public class AdminController {
 	public String insetRes(Model model,@ModelAttribute AdminDto dto) {
 			
 		int res = biz.insert(dto);
-		model.addAttribute("list", biz.selectAll());
+		model.addAttribute("admin_list", biz.selectAll());
 		if (res>0) {
 			//return "/WEB-INF/view/boardList.jsp";
 			//위처럼 하면 새로고침할때 마다 글이 추가되기 때문에 
@@ -86,10 +87,10 @@ public class AdminController {
 		//보내준것을 알아서 dto에 담겨서 가지고 온다
 		int res = biz.update(dto);
 		if (res>0) {
-			model.addAttribute("dto", biz.selectOne(dto.getMember_id()));
+			model.addAttribute("admin_dto", biz.selectOne(dto.getMember_id()));
 			return "forward:list.do";
 		}else {
-			model.addAttribute("dto", biz.selectOne(dto.getMember_id()));
+			model.addAttribute("admin_dto", biz.selectOne(dto.getMember_id()));
 		}return "forward:list.do";
 	}
 	
@@ -99,7 +100,7 @@ public class AdminController {
 		//@RequestParam("id") 사용
 		int res = biz.delete(member_id);
 		if (res>0) {
-		model.addAttribute("list", biz.selectAll());
+		model.addAttribute("admin_list", biz.selectAll());
 		}
 		return "list";
 	}

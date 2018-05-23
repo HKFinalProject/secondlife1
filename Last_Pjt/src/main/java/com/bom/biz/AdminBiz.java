@@ -1,7 +1,8 @@
-package com.bom.admin.biz;
+package com.bom.biz;
 
 import java.util.List;
-import com.bom.admin.AdminDto;
+
+import com.bom.dto.AdminDto;
 
 public interface AdminBiz {
 	
