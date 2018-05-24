@@ -1,4 +1,9 @@
+--DB
+--MEMBER
 DROP TABLE MEMBER;
+DROP SEQUENCE MEMBER_SEQ;
+
+CREATE SEQUENCE MEMBER_SEQ;
 
 CREATE TABLE MEMBER(
 MEMBER_NO NUMBER NOT NULL,
@@ -19,15 +24,15 @@ CONSTRAINT MEMBER_ROLE_CHK CHECK(MEMBER_ROLE IN ('ADMIN','USER'))
 SELECT * FROM MEMBER;
 
 INSERT INTO MEMBER VALUES(
-'100','id','pw','name','email@naver.com','010-000-0000','Y','ADMIN'
+MEMBER_SEQ.NEXTVAL,'id','pw','name','email@naver.com','010-000-0000','Y','ADMIN'
 );
 
 INSERT INTO MEMBER VALUES(
-'101','id1','pw1','name1','email1@naver.com','010-000-0001','Y','ADMIN'
+MEMBER_SEQ.NEXTVAL,'id1','pw1','name1','email1@naver.com','010-000-0001','Y','ADMIN'
 );
 
 INSERT INTO MEMBER VALUES(
-'102','id2','pw2','name2','email2@naver.com','010-000-0002','Y','USER'
+MEMBER_SEQ.NEXTVAL,'id2','pw2','name2','email2@naver.com','010-000-0002','Y','USER'
 );
 
 

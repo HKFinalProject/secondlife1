@@ -4,10 +4,12 @@
 	
 	<typeAliases>
 		<typeAlias type="com.bom.dto.AdminDto" alias="AdminDto"/>
+<!-- 		<typeAliase type="com.bom.dto.freetableDto" alias="freetableDto"/> -->
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="/sqls/Admin_mapper.xml"/>
+<!-- 		<mapper resource="/sqls/Freetable_mapper.xml"/> -->
 	</mappers>
 
 </configuration>
